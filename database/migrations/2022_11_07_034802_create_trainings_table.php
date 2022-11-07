@@ -15,6 +15,8 @@ class CreateTrainingsTable extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained('categories');
+            $table->foreignId('hosted_by')->constrained('users');
             $table->string('title_en')->unique();
             $table->string('title_bn')->nullable()->unique();
             $table->text('description_en');
@@ -23,6 +25,7 @@ class CreateTrainingsTable extends Migration
             $table->integer('duration_minutes')->default(10);
             $table->date('date')->default(date("Y-m-d"));
             $table->time('start_time')->default("10:00:00");
+            $table->string('video_link')->nullable();
             $table->timestamps();
         });
     }
