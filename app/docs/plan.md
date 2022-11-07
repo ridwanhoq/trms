@@ -25,4 +25,8 @@ TRAINING_EXCHANGE
     >> training_id
     >> user_id
 
->>  
+>>  training_interests
+    >> training_id
+    >> user_id
+
+>> 
